@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="com.example.bahaapp">
+    package="com.example.khairymobile">
 
     <dist:module dist:instant="true" />
 
@@ -12,6 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".single_item"></activity>
+        <activity android:name=".user_profile" />
+        <activity android:name=".donation_main" />
+        <activity android:name=".events_main" />
+        <activity android:name=".signup" />
+        <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package com.example.bahaapp;
+package com.example.khairymobile;
 
 import org.junit.Test;
 
