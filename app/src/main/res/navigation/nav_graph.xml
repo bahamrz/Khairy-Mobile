@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homefrag">
+
+
+    <fragment
+        android:id="@+id/homefrag"
+        android:name="com.example.khairymobile.homefrag"
+        android:label="fragment_homefrag"
+        tools:layout="@layout/fragment_homefrag" >
+        <action
+            android:id="@+id/action_homefrag_to_donationfrag"
+            app:destination="@id/donationfrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/donationfrag"
+        android:name="com.example.khairymobile.donationsfrag"
+        android:label="fragment_donationfrag"
+        tools:layout="@layout/fragment_donationfrag" >
+        <action
+            android:id="@+id/action_donationfrag_to_eventsfrag"
+            app:destination="@id/eventsfrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventsfrag"
+        android:name="com.example.khairymobile.eventsfrag"
+        android:label="fragment_eventsfrag"
+        tools:layout="@layout/fragment_eventsfrag" >
+        <action
+            android:id="@+id/action_eventsfrag_to_userprofilefrag"
+            app:destination="@id/userprofilefrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/userprofilefrag"
+        android:name="com.example.khairymobile.userprofilefrag"
+        android:label="fragment_userprofilefrag"
+        tools:layout="@layout/fragment_userprofilefrag" />
+</navigation>

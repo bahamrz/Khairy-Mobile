@@ -5,17 +5,23 @@
 
     <dist:module dist:instant="true" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".single_item"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".user_edit" android:parentActivityName=".user_profile"></activity>
+        <activity android:name=".single_item" />
         <activity android:name=".user_profile" />
         <activity android:name=".donation_main" />
-        <activity android:name=".events_main" />
+        <activity
+            android:name=".events_main"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".signup" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">

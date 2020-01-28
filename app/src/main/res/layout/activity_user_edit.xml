@@ -12,7 +12,7 @@
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="بيانات الحساب"
+        android:text="تعديل بيانات الحساب"
         android:textColor="@color/colorPrimaryDark"
         android:layout_gravity="center"
         android:gravity="center"
@@ -43,8 +43,9 @@
                 android:textStyle="italic"
                 android:layout_weight="1"
                 />
-            <TextView
-                android:id="@+id/username"
+            <EditText
+                android:hint="user name"
+                android:id="@+id/editusername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -83,8 +84,9 @@
                 android:textStyle="italic"
                 android:layout_weight="1"
                 />
-            <TextView
-                android:id="@+id/email"
+            <EditText
+                android:hint="email"
+                android:id="@+id/editemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -123,12 +125,13 @@
                 android:textStyle="italic"
                 android:layout_weight="1"
                 />
-            <TextView
-
-                android:hint="********"
+            <EditText
+                android:id="@+id/editpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:hint="******"
+                android:inputType="textPassword"
                 android:textDirection="rtl"
                 />
         </LinearLayout>
@@ -165,7 +168,7 @@
                 android:layout_weight="1"
                 />
             <TextView
-                android:id="@+id/lasteditonaccount"
+                android:id="@+id/lasteditinaccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -182,8 +185,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/editmyinfo"
-        android:onClick="emi"
-        android:layout_marginTop="50dp"
+        android:onClick="saveeditdata"
+        android:layout_marginTop="70dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center"
@@ -193,7 +196,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="تعديل بياناتي"
+            android:text="تـعـديـل"
             android:gravity="center"
             android:textStyle="bold"
             android:textSize="25sp"
@@ -201,24 +204,5 @@
             />
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/logout"
-        android:onClick="loogout"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        card_view:cardBackgroundColor="@color/cardview_dark_background"
-        card_view:cardCornerRadius="15dp"
-        >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="طلّعني برّااا"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:textColor="@color/colorText"
-            />
-    </androidx.cardview.widget.CardView>
+
 </LinearLayout>

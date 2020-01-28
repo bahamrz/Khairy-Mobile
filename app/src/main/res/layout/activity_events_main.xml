@@ -5,7 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".events_main">
+    tools:context=".events_main"
+    android:orientation="vertical">
+
+
+
+
 
     <ListView
         android:id="@+id/eventlv"

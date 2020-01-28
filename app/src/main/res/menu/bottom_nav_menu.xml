@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/homefrag"
+        android:icon="@drawable/home"
+        android:title="الرئيسية"
+        app:showAsAction="withText"
+        />
+
+    <item
+        android:id="@+id/donationfrag"
+        android:icon="@drawable/donations"
+        android:title="التبرعات"
+        app:showAsAction="withText"
+        />
+    <item
+        android:id="@+id/eventsfrag"
+        android:icon="@drawable/events"
+        android:title="الحملات"
+        app:showAsAction="withText"
+        />
+    <item
+        android:id="@+id/userprofilefrag"
+        android:icon="@drawable/user"
+        android:title="أنا"
+        app:showAsAction="withText"
+        />
+
+
+
+</menu>
