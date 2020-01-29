@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -38,9 +41,21 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        setTitle("تسجيل الدخول إلى خيري :)");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+
+//        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         email=findViewById(R.id.loginemail);
         password=findViewById(R.id.loginpass);
         registrate=findViewById(R.id.register);
+
+        registrate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),signup.class));
+            }
+        });
     }
 
     public void login(View view) {
@@ -107,5 +122,16 @@ public class LoginActivity extends AppCompatActivity {
 
 //        SharedPreferences preferences = getSharedPreferences("AUTH", LoginActivity.this.MODE_PRIVATE);
 //        preferences.edit().putString("TOKEN", access_token).apply();
+    }
+    //Return to parent Fragment when pressing back arrow
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return true;
     }
 }

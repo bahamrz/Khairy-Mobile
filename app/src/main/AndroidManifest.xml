@@ -17,7 +17,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".apiuserdonations"></activity>
+        <activity android:name=".aboutus"></activity>
+        <activity android:name=".apiuserdonations" />
         <activity
             android:name=".user_edit"
             android:parentActivityName=".user_profile" />

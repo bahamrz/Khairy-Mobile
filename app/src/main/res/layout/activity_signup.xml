@@ -1,65 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center"
     android:paddingLeft="60dp"
     android:paddingRight="60dp"
     android:paddingTop="30dp"
-    >
+    android:background="#11CFC5">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="أول خطوة في عمل الخير هي التسجيل في خيري "
+            android:textStyle="italic"
+            android:textSize="17sp"
+            android:textColor="#fff"
+            />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_login_hero"
+            android:paddingBottom="10dp"
+            android:layout_weight="2"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#fff"
+        >
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="إسم المستخدم "
-        android:id="@+id/username"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="البريد الإلكتروني"
-        android:id="@+id/signupemail"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="الرمز السري"
-        android:id="@+id/password"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="تأكيد الرمز السري"
-        android:id="@+id/confirmpassword"
-        />
-    <CheckBox
-        android:textColor="#3F51B5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="أوافق على شروط الإستخدام والخصوصية"
-        />
-    <Button
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="تسجيل الحساب"
-        android:onClick="login"
-        android:background="#11CFC5"
-        android:textColor="#f8f8ff"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="إسم المستخدم "
+            android:id="@+id/username"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="البريد الإلكتروني"
+            android:id="@+id/signupemail"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="الرمز السري"
+            android:id="@+id/password"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="تأكيد الرمز السري"
+            android:id="@+id/confirmpassword"
+            />
 
-    <TextView
-        android:id="@+id/login"
-        android:layout_marginTop="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="هل أنت مستخدم بالفعل؟ تسجيل الدخول"
-        android:textStyle="italic"
-        android:textSize="13sp"
-        android:textColor="#E91E63"
-        />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
+            android:text="أوافق على شروط الإستخدام والخصوصية"
+            android:textColor="#3F51B5"
+            android:layout_gravity="center"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/registercard"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="#11CFC5"
+            >
+
+            <TextView
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تسجيل الحساب"
+                android:layout_gravity="center"
+                android:onClick="login"
+                android:textColor="#f8f8ff"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+
+            android:id="@+id/alreadyuserlogin"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="هل أنت مستخدم بالفعل؟ تسجيل الدخول"
+            android:textStyle="italic"
+            android:textSize="13sp"
+            android:textColor="#E91E63"
+            android:layout_gravity="center"
+            android:paddingBottom="10dp"
+            />
+    </LinearLayout>
 </LinearLayout>

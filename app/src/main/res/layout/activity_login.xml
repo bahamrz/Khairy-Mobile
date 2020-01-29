@@ -9,8 +9,30 @@
     android:paddingLeft="60dp"
     android:paddingRight="60dp"
     android:paddingTop="30dp"
-    android:background="@color/colorPrimary"
+    android:layoutDirection="rtl"
     >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text="مرحباً بك مجدداً في خيري"
+            android:textStyle="italic"
+            android:textSize="17sp"
+            android:textColor="#000000"
+            />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_register_hero"
+            android:paddingBottom="10dp"
+            android:layout_weight="2"
+            />
+    </LinearLayout>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,22 +47,33 @@
         android:layout_height="wrap_content"
         android:hint="الرمز السري"
         android:gravity="right"
-        android:layoutDirection="rtl"
         android:id="@+id/loginpass"
         android:textColor="@color/colorText"
         android:inputType="textPassword"
         />
-    <Button
-        android:layout_marginTop="20dp"
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/registercard"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="تسجيل الدخول"
-        android:onClick="login"
-        android:background="#11CFC5"
-        android:textColor="#f8f8ff"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        />
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="#11CFC5"
+        >
+
+        <TextView
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="تسجيل الدخول"
+            android:layout_gravity="center"
+            android:onClick="login"
+            android:textColor="#f8f8ff"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            />
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/register"
@@ -50,7 +83,7 @@
         android:gravity="bottom"
         android:text="هل أنت مستخدم جديد؟ "
         android:textAlignment="center"
-        android:textColor="@color/colorText"
+        android:textColor="#352424"
         android:textSize="13sp"
         android:textStyle="italic"
 

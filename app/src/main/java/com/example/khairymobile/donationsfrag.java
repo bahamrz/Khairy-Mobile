@@ -50,7 +50,6 @@ public class donationsfrag extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_donationfrag, container, false);
         // To print static items
 //        initImageBitMaps();
@@ -63,8 +62,8 @@ public class donationsfrag extends Fragment {
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void getApiContent() {
         RequestQueue queue = Volley.newRequestQueue(Objects.requireNonNull(getContext()));
-        final String imageurlcompleter = "http://192.168.1.7/khairy/public/storage/";
-        String url = "http://192.168.1.7/khairy/public/api/products";
+        final String imageurlcompleter = "http://localhost:8080/khairy/public/storage/";
+        String url = "http://localhost:8080/khairy/public/api/products";
 
         JsonArrayRequest JsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
@@ -84,11 +83,13 @@ public class donationsfrag extends Fragment {
                         mtitle.add(title);
                         mdescription.add(description);
                         mdate.add(date);
+                        image = image.replace("public/","");
                         mimage.add(imageurlcompleter+image);
                         initRecycleView();
 
                     } catch (JSONException e) {
                         e.printStackTrace();
+
                     }
                 }
 

@@ -105,8 +105,8 @@ String URL = "http://localhost:8080/khairy/public/api/me";
         showus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent showmeinfo = new Intent(getActivity(), events_main.class);
-                startActivityForResult(showmeinfo,0);
+                Intent showmeinfo = new Intent(getActivity(), aboutus.class);
+                startActivity(showmeinfo);
 //                startActivity(new Intent(getActivity(),events_main.class));
             }
         });
@@ -121,7 +121,11 @@ String URL = "http://localhost:8080/khairy/public/api/me";
         mydonation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(),apiuserdonations.class));
+
+                Intent usrapidon = new Intent(getActivity(),apiuserdonations.class);
+                usrapidon.putExtra("ttoken",ttoken);
+                startActivity(usrapidon);
+
             }
         });
         return view;
