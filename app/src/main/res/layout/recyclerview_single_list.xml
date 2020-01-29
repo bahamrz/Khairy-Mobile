@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="270dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    app:cardBackgroundColor="#E6E5E5">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:id="@+id/image"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="هنا العنوان"
+            android:textColor="#FF3B7A88"
+            android:paddingEnd="8dp"
+            android:textSize="25dp"
+            android:id="@+id/title"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:paddingEnd="8dp"
+                android:text="هنا حايكون ديسكربشن وكذا يسكمبنكيسمبخصتبمنيس شسيييييييييشس صصصصصصصصصثض"
+                android:textSize="13dp"
+                android:id="@+id/description"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="المزيد من التفاصيل"
+                    android:padding="2dp"
+                    android:textColor="#3B7A88"
+                    android:id="@+id/seemore"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="مشاركه"
+                    android:layout_marginStart="8dp"
+                    android:padding="2dp"
+                    android:id="@+id/share"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1\1\2020"
+                    android:gravity="end"
+                    android:paddingEnd="8dp"
+                    android:id="@+id/date"/>
+            </LinearLayout>
+        </LinearLayout>
+
+</androidx.cardview.widget.CardView>
