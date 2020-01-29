@@ -221,4 +221,5 @@
             android:textColor="@color/colorText"
             />
     </androidx.cardview.widget.CardView>
+
 </LinearLayout>

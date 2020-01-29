@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.khairymobile">
 
     <dist:module dist:instant="true" />
@@ -14,8 +15,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".user_edit" android:parentActivityName=".user_profile"></activity>
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".apiuserdonations"></activity>
+        <activity
+            android:name=".user_edit"
+            android:parentActivityName=".user_profile" />
         <activity android:name=".single_item" />
         <activity android:name=".user_profile" />
         <activity android:name=".donation_main" />

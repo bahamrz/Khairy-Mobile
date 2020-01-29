@@ -118,6 +118,12 @@ String URL = "http://localhost:8080/khairy/public/api/me";
                 startActivity(new Intent(getActivity(),user_profile.class));
             }
         });
+        mydonation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),apiuserdonations.class));
+            }
+        });
         return view;
 
 

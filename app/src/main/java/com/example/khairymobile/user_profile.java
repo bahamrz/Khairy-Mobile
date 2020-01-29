@@ -46,7 +46,7 @@ public class user_profile extends AppCompatActivity {
         email = findViewById(R.id.email);
 //        datejoined = findViewById(R.id.dateofjoining);
         lasteditonaccount = findViewById(R.id.lasteditonaccount);
-        final SharedPreferences sharedPreferences = this.getSharedPreferences("AUTH", Context.MODE_PRIVATE);
+        final SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("AUTH", Context.MODE_PRIVATE);
         ttoken = sharedPreferences.getString("AUTH",token);
         getUserinfo();
 //TODO  hello
@@ -135,7 +135,11 @@ public class user_profile extends AppCompatActivity {
 
 
     public void loogout(View view) {
-
+        final SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("AUTH", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
     }
 }
 
