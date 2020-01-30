@@ -118,8 +118,6 @@ public class SingleItemViewActivity extends AppCompatActivity {
 //                    roles.setText(response.getString("phone"));
                     userid = response.getString("id");
 
-                    Toast.makeText(getApplicationContext(), "Success :" + userid, Toast.LENGTH_SHORT).show();
-
                 } catch (JSONException e) {
                     e.printStackTrace();
 
@@ -154,7 +152,7 @@ public class SingleItemViewActivity extends AppCompatActivity {
 
                 try {
                     Toast.makeText(SingleItemViewActivity.this, "Your response MyKing = "+ response.getString("response"), Toast.LENGTH_SHORT).show();
-                    if (response.getString("response").لهفequals("ok")){
+                    if (response.getString("response").equals("ok")){
                         startActivity(new Intent(getApplicationContext(),Seccuss_Claim.class));
                     }else{
                         Toast.makeText(SingleItemViewActivity.this, "هوا شوف ياأنت طلبته قبل يأنت مدايره فافوتهله", Toast.LENGTH_SHORT).show();
