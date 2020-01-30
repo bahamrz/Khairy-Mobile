@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -36,10 +37,11 @@ public class apiuserdonations extends AppCompatActivity {
     private ArrayList<String> mdescription = new ArrayList<>();
     private ArrayList<String> mdate = new ArrayList<>();
     private ArrayList<String> mimage = new ArrayList<>();
+
     RecyclerView recyclerView;
     userDonationsAdapter adapter;
 
-    private String title, description, date,image, creator ;
+    private String title, description, date,image, creatorid ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,13 +49,13 @@ public class apiuserdonations extends AppCompatActivity {
         Intent usrtoken = getIntent();
         ttoken = usrtoken.getStringExtra("ttoken");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle("تــبرعاتـي");
         recyclerView = findViewById(R.id.viewuserapi);
         RecyclerView.LayoutManager layoutManager;
         layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         adapter = new userDonationsAdapter(apiuserdonations.this, mimage,mtitle,mdescription,mdate);
 //        recyclerView.setAdapter(adapter);
-        initializeRecycleView();
 
 //        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("AUTH", Context.MODE_PRIVATE);
 //        ttoken = sharedPreferences.getString("AUTH",token);
@@ -90,7 +92,8 @@ public class apiuserdonations extends AppCompatActivity {
                          description = jsonObject.getString("description");
                         date = jsonObject.getString("created_at");
                          image = jsonObject.getString("image");
-//                         creator =user.getString("name");
+                         //donation id to delete or edit
+                        creatorid =jsonObject.getString("id");
 
                         mtitle.add(title);
                         mdescription.add(description);
@@ -100,7 +103,7 @@ public class apiuserdonations extends AppCompatActivity {
                         recyclerView.setAdapter(adapter);
                         adapter.notifyDataSetChanged();
 
-                        initializeRecycleView();
+                        initiItemClickiListiner();
 
                     } catch (JSONException e) {
                         Toast.makeText(getApplicationContext(), "JSON ERROR DIE", Toast.LENGTH_SHORT).show();
@@ -118,8 +121,23 @@ public class apiuserdonations extends AppCompatActivity {
         queue.add(JsonArrayRequest);
     }
 
+
     // Recycle viewer
-    private void initializeRecycleView(){
+    private void initiItemClickiListiner(){
+        adapter.setOnItemClickListener(new userDonationsAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Intent usrdonatedit = new Intent(getApplicationContext(),user_single_item.class);
+                usrdonatedit.putExtra("usrname",mtitle.get(position));
+                usrdonatedit.putExtra("desc",mdescription.get(position));
+                usrdonatedit.putExtra("img",mimage.get(position));
+                usrdonatedit.putExtra("dat",mdate.get(position));
+                usrdonatedit.putExtra("donateid",creatorid);
+                startActivityForResult(usrdonatedit,1);
+            }
+        });
+
+
     }
 
     //Return to parent Fragment when pressing back arrow
