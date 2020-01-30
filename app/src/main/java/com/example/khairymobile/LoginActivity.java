@@ -28,12 +28,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText email, password;
     private TextView registrate;
-    private static String LOGIN_URL="http://localhost:8080/khairy/public/api/login";
+    private static String LOGIN_URL="http://192.168.1.7/khairy/public/api/login";
     private String loginemail;
     private String loginpass;
     public  String token;
@@ -42,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         setTitle("تسجيل الدخول إلى خيري :)");
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(Color.WHITE));
 
 //        getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

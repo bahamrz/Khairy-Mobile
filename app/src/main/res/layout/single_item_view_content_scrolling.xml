@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".SingleItemViewActivity"
+    tools:showIn="@layout/activity_single_item_view">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:paddingStart="70dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleView"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:paddingEnd="8dp"
+            android:id="@+id/singleViewTitle"
+            android:text="هنا حايكون عنوان الموضوع زي متلا بنادول لوجع الرأس ..."
+            android:textColor="@color/colorPrimar"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_below="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:id="@+id/cretorView"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="اسم اليوسر هنا "
+                android:textSize="12sp"
+                android:id="@+id/singleViewCreator"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:paddingTop="8dp"
+                android:gravity="end"/>
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="تم النشر بواسطة : "
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:paddingEnd="8dp"
+                android:paddingTop="8dp"
+                />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:id="@+id/dateView"
+        android:layout_below="@+id/cretorView">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="25/1/2020"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:id="@+id/singleViewDate"
+            android:layout_gravity="center"
+            android:gravity="end"/>
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="تاريخ النشر         : "
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingEnd="8dp"
+
+            />
+         </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="5dp"
+    android:id="@+id/seperator"
+    android:layout_marginBottom="8dp"
+    android:layout_below="@+id/dateView"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp">
+    >
+    <TableRow
+        android:id="@+id/hr"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"/>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/t2"
+        android:layout_below="@+id/seperator"
+        >
+        <TextView
+            android:paddingEnd="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="هنا حايكون فيه الديسكربشن للحاجه وهكي "
+            android:gravity="start"
+            android:id="@+id/singleViewDescription"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:paddingEnd="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/t2"
+        android:text="@string/large_text"
+        android:gravity="start"/>
+</RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

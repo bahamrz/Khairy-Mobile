@@ -29,8 +29,8 @@ import java.util.Objects;
 
 public class apiuserdonations extends AppCompatActivity {
     private String token, ttoken;
-    final String imageurlcompleter ="http://localhost:8080/khairy/public/storage/";
-    String URL = "http://localhost:8080/khairy/public/api/user/donations";
+    final String imageurlcompleter ="http://192.168.1.7/khairy/public/storage/";
+    String URL = "http://192.168.1.7/khairy/public/api/user/donations";
 //    String URL = "http://localhost:8080/khairy/public/api/user/donations";
     private ArrayList<String> mtitle = new ArrayList<>();
     private ArrayList<String> mdescription = new ArrayList<>();

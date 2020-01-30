@@ -1,14 +1,17 @@
 package com.example.khairymobile;
 
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.RequiresApi;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +35,7 @@ import java.util.Objects;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class donationsfrag extends Fragment {
+public class donationsfrag extends Fragment implements recyclerViewAdapter.onItemListener {
 
     private static final String TAG = "donation_main";
 
@@ -41,9 +44,15 @@ public class donationsfrag extends Fragment {
     private ArrayList<String> mdescription = new ArrayList<>();
     private ArrayList<String> mdate = new ArrayList<>();
     private ArrayList<String> mimage = new ArrayList<>();
+    private ArrayList<String> mcreator = new ArrayList<>();
+    private String creator;
+    private String date;
+    private String title;
+    private String image;
+    private String description;
+    // Required empty public constructor
 
     public donationsfrag() {
-        // Required empty public constructor
     }
 
 
@@ -54,6 +63,7 @@ public class donationsfrag extends Fragment {
         // To print static items
 //        initImageBitMaps();
         getApiContent();
+
         // Inflate the layout for this fragment
         return view;
 
@@ -62,29 +72,31 @@ public class donationsfrag extends Fragment {
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void getApiContent() {
         RequestQueue queue = Volley.newRequestQueue(Objects.requireNonNull(getContext()));
-        final String imageurlcompleter = "http://localhost:8080/khairy/public/storage/";
-        String url = "http://localhost:8080/khairy/public/api/products";
+        final String imageurlcompleter = "http://192.168.1.7/khairy/public/storage/";
+        final String url = "http://192.168.1.7/khairy/public/api/products";
 
         JsonArrayRequest JsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
-                for (int i =0 ; i < response.length() ; i++){
+                for (int i = 0; i < response.length(); i++) {
                     try {
                         JSONObject jsonObject = response.getJSONObject(i);
                         JSONObject user = jsonObject.getJSONObject("creator");
 
-                        String title = jsonObject.getString("name");
-                        String description = jsonObject.getString("description");
-                        String date = jsonObject.getString("created_at");
-                        String image = jsonObject.getString("image");
-                        String creator =user.getString("name");
+                        title = jsonObject.getString("name");
+                        description = jsonObject.getString("description");
+                        date = jsonObject.getString("created_at");
+                        image = jsonObject.getString("image");
+                        creator = user.getString("name");
 
                         mtitle.add(title);
                         mdescription.add(description);
                         mdate.add(date);
-                        image = image.replace("public/","");
-                        mimage.add(imageurlcompleter+image);
+                        image = image.replace("public/", "");
+                        mimage.add(imageurlcompleter + image);
+                        mcreator.add(creator);
+
                         initRecycleView();
 
                     } catch (JSONException e) {
@@ -97,7 +109,7 @@ public class donationsfrag extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), "YOU Have no internet connection idiot ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
             }
         });
         queue.add(JsonArrayRequest);
@@ -141,11 +153,27 @@ public class donationsfrag extends Fragment {
 //        initRecycleView();
 //    }
 
-    private void initRecycleView(){
-        RecyclerView RecyclerView = getView().findViewById(R.id.recycler_view);
-        recyclerViewAdapter adapter = new recyclerViewAdapter(getContext(),mimage,mtitle,mdescription,mdate);
+    private void initRecycleView() {
+        RecyclerView RecyclerView = Objects.requireNonNull(getView()).findViewById(R.id.recycler_view);
+        recyclerViewAdapter adapter = new recyclerViewAdapter(getContext(), this,mcreator, mimage, mtitle, mdescription, mdate);
         RecyclerView.setAdapter(adapter);
         RecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+    }
+
+    @Override
+    public void onItemClick(int position) {
+
+
+        Intent intent = new Intent(getContext(), SingleItemViewActivity.class);
+
+        intent.putExtra("title", mtitle.get(position));
+        intent.putExtra("creator", mcreator.get(position));
+        intent.putExtra("date", mdate.get(position));
+        intent.putExtra("image", mimage.get(position));
+        intent.putExtra("description", mdescription.get(position));
+        intent.putExtra("position",position);
+
+        startActivity(intent);
     }
 }
 

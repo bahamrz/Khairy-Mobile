@@ -42,7 +42,7 @@ private Button lgnbtn,logout;
 private String token,ttoken;
 private TextView title, nologin;
 CardView myinfo, mydonation, myevent,showus;
-String URL = "http://localhost:8080/khairy/public/api/me";
+String URL = "http://192.168.1.7/khairy/public/api/me";
     public userprofilefrag() {
         // Required empty public constructor
     }

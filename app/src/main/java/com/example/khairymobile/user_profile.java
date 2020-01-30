@@ -32,7 +32,7 @@ public class user_profile extends AppCompatActivity {
     private CardView editmyinfo, logemout;
     private TextView usrname, email, datejoined,roles,lasteditonaccount;
     private String token,ttoken,userid;
-    String URL = "http://localhost:8080/khairy/public/api/me";
+    String URL = "http://192.168.1.7/khairy/public/api/me";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

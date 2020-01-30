@@ -19,6 +19,7 @@
         android:src="@drawable/khairylogosmall"
         android:layout_marginBottom="50dp"
         android:layout_weight="1"
+        android:scaleType="fitXY"
         />
 
 <LinearLayout
