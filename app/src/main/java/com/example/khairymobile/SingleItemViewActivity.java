@@ -157,7 +157,7 @@ public class SingleItemViewActivity extends AppCompatActivity {
                     if (response.getString("response")== "ok"){
                         startActivity(new Intent(getApplicationContext(),Seccuss_Claim.class));
                     }else{
-                        Toast.makeText(SingleItemViewActivity.this, "you're UNAuthorised", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SingleItemViewActivity.this, "هوا شوف ياأنت طلبته قبل يأنت مدايره فافوتهله", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
