@@ -154,7 +154,7 @@ public class SingleItemViewActivity extends AppCompatActivity {
 
                 try {
                     Toast.makeText(SingleItemViewActivity.this, "Your response MyKing = "+ response.getString("response"), Toast.LENGTH_SHORT).show();
-                    if (response.getString("response")== "ok"){
+                    if (response.getString("response").لهفequals("ok")){
                         startActivity(new Intent(getApplicationContext(),Seccuss_Claim.class));
                     }else{
                         Toast.makeText(SingleItemViewActivity.this, "هوا شوف ياأنت طلبته قبل يأنت مدايره فافوتهله", Toast.LENGTH_SHORT).show();
