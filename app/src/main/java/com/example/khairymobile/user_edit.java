@@ -27,7 +27,7 @@ import org.json.JSONObject;
 public class user_edit extends AppCompatActivity {
 private EditText editeduser, editedmail,editedpassword;
 private TextView lasteditinaccount;
-String URL="http://localhost:8080/khairy/public/api/user/update";
+String URL="http://192.168.1.7/khairy/public/api/user/update";
 private String token, ttoken,userid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

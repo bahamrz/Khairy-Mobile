@@ -38,11 +38,12 @@ import java.util.ArrayList;
  */
 public class userprofilefrag extends Fragment {
 
-private Button lgnbtn,logout;
+
+private Button logout;
 private String token,ttoken;
 private TextView title, nologin;
-CardView myinfo, mydonation, myevent,showus;
-String URL = "http://localhost:8080/khairy/public/api/me";
+CardView lgnbtn,myinfo, mydonation, myevent,showus;
+String URL = "http://192.168.1.7/khairy/public/api/me";
     public userprofilefrag() {
         // Required empty public constructor
     }
@@ -53,7 +54,7 @@ String URL = "http://localhost:8080/khairy/public/api/me";
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_userprofilefrag, container, false);
-        lgnbtn =(Button)view.findViewById(R.id.loginbtn);
+        lgnbtn =(CardView) view.findViewById(R.id.loginbtn);
         title =(TextView) view.findViewById(R.id.title);
         nologin =(TextView) view.findViewById(R.id.nologin);
         logout=(Button)view.findViewById(R.id.logout);

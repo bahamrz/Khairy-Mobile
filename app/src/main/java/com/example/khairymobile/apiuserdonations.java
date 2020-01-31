@@ -136,8 +136,6 @@ public class apiuserdonations extends AppCompatActivity {
                 startActivityForResult(usrdonatedit,1);
             }
         });
-
-
     }
 
     //Return to parent Fragment when pressing back arrow

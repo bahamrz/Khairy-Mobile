@@ -34,13 +34,27 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <Button
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/loginbtn"
-        style="@android:style/Widget.Holo.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center"
+        card_view:cardBackgroundColor="#E57373"
+        >
+
+    <TextView
+        android:paddingVertical="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Click Here to login :D" />
+        android:textColor="#fff"
+        android:text="إضغط لتسجيل الدخول :D" />
+    </androidx.cardview.widget.CardView>
+
+
+
+
 
     <Button
         android:id="@+id/logout"

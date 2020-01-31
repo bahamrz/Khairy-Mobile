@@ -17,7 +17,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".user_single_item"></activity>
+        <activity android:name=".edit_item"></activity>
+        <activity android:name=".user_single_item" />
+        <activity android:name=".Seccuss_Claim" />
         <activity android:name=".aboutus" />
         <activity android:name=".apiuserdonations" />
         <activity
@@ -38,6 +40,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SingleItemViewActivity" />
     </application>
 
 </manifest>

@@ -64,7 +64,15 @@ usrdonatedelete.setOnClickListener(new View.OnClickListener() {
         deletedonation();
     }
 });
+usrdonateedit.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
 
+        Intent edititem = new Intent(getApplicationContext(),edit_item.class);
+        startActivityForResult(edititem,1);
+
+    }
+});
 
     }
 

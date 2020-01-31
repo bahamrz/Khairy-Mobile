@@ -28,6 +28,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -42,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         setTitle("تسجيل الدخول إلى خيري :)");
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(Color.WHITE));
 
 //        getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
